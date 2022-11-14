@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import datetime
+from sklearn.cluster import KMeans
+
 
 #- Usar un archivo Excel como fuente de datos iniciales, con al menos 1000 registros. Puede ser un archivo propio o bien obtenido de alguna fuente pública, de cualquier forma, debe quedar disponible en el repositorio de entrega.
 def carga_inicial():
@@ -26,7 +28,6 @@ odc_renombrado['Fecha de Proceso'] = fecha_actual.strftime("%d-%m-%Y")
 #  al menos 5 comunas. Tip: se debe hacer la consulta de las 5 comunas antes de aplicar
 #  el dato a la columna de Clima, similar al ejemplo de horarios en la clase final.
 odc_renombrado['Clima'] = ("")
-print(odc_renombrado)
 #Obtener lista de comunas resumidas
 comunas = odc_renombrado["COMUNA"].sort_values().unique()
 
@@ -36,9 +37,15 @@ agrupado = odc_renombrado.groupby(['COMUNA']).agg(
                                    #'Clima':'sum' 
                                    #'ultima_visita':'max'
                                   }).reset_index()
-agrupado = agrupado.groupby(by='COMUNA').sum('NUMERO INCENDIOS ').sort_values(by='NUMERO INCENDIOS ', ascending=False)
+agrupado = agrupado.groupby(by='TOTAL SUPERFICIE AFECTADA').sum('NUMERO INCENDIOS ').sort_values(by='NUMERO INCENDIOS ', ascending=False)
 
-#print (agrupado)
+kmeans = KMeans(n_clusters=4).fit(agrupado)
+centroids = kmeans.cluster_centers_
+print(centroids)
+
+plt.scatter(odc_renombrado['NUMERO INCENDIOS '], odc_renombrado['TOTAL SUPERFICIE AFECTADA'], c= kmeans.labels_.astype(float), s=50, alpha=0.5)
+plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
+plt.show()
 
 #Aplicar a la columna clima Segun el clima de la comuna y la cantidad de incendios
 #Riesgo Alto, Medio, Bajo
