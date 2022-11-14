@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import datetime
 from sklearn.cluster import KMeans
+from sklearn import datasets
+from sklearn.utils import shuffle
+
 
 
 #- Usar un archivo Excel como fuente de datos iniciales, con al menos 1000 registros. Puede ser un archivo propio o bien obtenido de alguna fuente pública, de cualquier forma, debe quedar disponible en el repositorio de entrega.
@@ -33,19 +36,24 @@ comunas = odc_renombrado["COMUNA"].sort_values().unique()
 
 #Agrupar y sumar por la columna NUMERO DE INCENDIOS
 agrupado = odc_renombrado.groupby(['COMUNA']).agg(
-                                  {'NUMERO INCENDIOS ': 'sum' 
+                                  {'NUMERO INCENDIOS ': 'sum',  
+                                  'AÑO' : [],
+                                  'AREA TOTAL AFECTADA': []
                                    #'Clima':'sum' 
                                    #'ultima_visita':'max'
                                   }).reset_index()
-agrupado = agrupado.groupby(by='TOTAL SUPERFICIE AFECTADA').sum('NUMERO INCENDIOS ').sort_values(by='NUMERO INCENDIOS ', ascending=False)
 
-kmeans = KMeans(n_clusters=4).fit(agrupado)
-centroids = kmeans.cluster_centers_
-print(centroids)
+#agrupado = agrupado.groupby(by='TOTAL SUPERFICIE AFECTADA').sum('NUMERO INCENDIOS ').sort_values(by='NUMERO INCENDIOS ', ascending=False)
 
-plt.scatter(odc_renombrado['NUMERO INCENDIOS '], odc_renombrado['TOTAL SUPERFICIE AFECTADA'], c= kmeans.labels_.astype(float), s=50, alpha=0.5)
-plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
-plt.show()
+print(agrupado)
+
+#kmeans = KMeans(n_clusters=4).fit(agrupado['NUMERO INCENDIOS  ','TOTAL SUPERFICIE AFECTADA'])
+#centroids = kmeans.cluster_centers_
+#print(centroids)
+
+#plt.scatter(agrupado['NUMERO INCENDIOS '], agrupado['TOTAL SUPERFICIE AFECTADA'], c= kmeans.labels_.astype(float), s=50, alpha=0.5)
+#plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
+#plt.show()
 
 #Aplicar a la columna clima Segun el clima de la comuna y la cantidad de incendios
 #Riesgo Alto, Medio, Bajo
