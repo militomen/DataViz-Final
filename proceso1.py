@@ -36,28 +36,35 @@ comunas = odc_renombrado["COMUNA"].sort_values().unique()
 
 #Agrupar y sumar por la columna NUMERO DE INCENDIOS
 agrupado = odc_renombrado.groupby(['COMUNA']).agg(
-                                  {'NUMERO INCENDIOS ': 'sum',  
-                                  'AÑO' : [],
-                                  'AREA TOTAL AFECTADA': []
+                                  {'NUMERO INCENDIOS ': 'sum'  
                                    #'Clima':'sum' 
                                    #'ultima_visita':'max'
-                                  }).reset_index()
+                                  }).reset_index().sort_values(by="NUMERO INCENDIOS ", ascending=False)
 
-#agrupado = agrupado.groupby(by='TOTAL SUPERFICIE AFECTADA').sum('NUMERO INCENDIOS ').sort_values(by='NUMERO INCENDIOS ', ascending=False)
+#top5 = agrupado ['COMUNA']
+top5 = [agrupado[0:5]]
 
-print(agrupado)
-
-#kmeans = KMeans(n_clusters=4).fit(agrupado['NUMERO INCENDIOS  ','TOTAL SUPERFICIE AFECTADA'])
-#centroids = kmeans.cluster_centers_
-#print(centroids)
-
-#plt.scatter(agrupado['NUMERO INCENDIOS '], agrupado['TOTAL SUPERFICIE AFECTADA'], c= kmeans.labels_.astype(float), s=50, alpha=0.5)
-#plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
-#plt.show()
+print(top5)
 
 #Aplicar a la columna clima Segun el clima de la comuna y la cantidad de incendios
 #Riesgo Alto, Medio, Bajo
 
+def asigna_clima(data):
+  comuna=top5["Comuna"]
+  incendios=top5["NUMERO INCENDIOS "]
+
+  if(incendios < -33.49):
+    return top5[5]
+  elif(comuna=="RENCA" and incendios > 500):
+    return top5[0]
+  elif(comuna=="RENCA"):
+    return top5[1]
+  elif(comuna=="PROVIDENCIA"):
+    return top5[2]
+  elif(comuna=="HUECHURABA"):
+    return top5[3]
+  else:
+    return top5[4]
 
 #- El DataFrame resultante, debe ser almacenado en una base de datos local
 

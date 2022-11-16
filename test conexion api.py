@@ -7,7 +7,7 @@ api_key = "a5199b175531f72559a9c1354f616168"
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
  
 # Give city name
-city_name = "Santiago,cl"
+city_name = "Santiago"
  
 # complete_url variable to store
 # complete url address
@@ -22,7 +22,7 @@ response = requests.get(complete_url)
 # python format data
 x = response.json()
 print(x)
-descripcion_clima   =  x {['weather'][0],['description'],
-                        ['cord'][0]
-                        }
-print(descripcion_clima)
+#descripcion_clima   =  x {['weather'][0],['description'],
+#                        ['cord'][0]
+#                        }
+#print(descripcion_clima)
