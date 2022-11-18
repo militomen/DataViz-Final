@@ -34,35 +34,46 @@ agrupado = odc_renombrado.groupby(['COMUNA']).agg(
                                   {'NUMERO INCENDIOS ': 'sum'  
                                    #'Clima':'sum' 
                                    #'ultima_visita':'max'
-                                  }).reset_index().sort_values(by="NUMERO INCENDIOS ", ascending=False)
-
+                                  }).reset_index().sort_values(by="NUMERO INCENDIOS ", ascending=True)
+print(agrupado)
+agrupado['Clima'] = ("")
 #top5 = agrupado ['COMUNA']
 top5 = [agrupado[0:5]]
 
 print(top5[1])
 
-#Aplicar a la columna clima Segun el clima de la comuna y la cantidad de incendios
-#Riesgo Alto, Medio, Bajo
+#Aplicar a la columna clima Segun el top 5 y la cantidad de incendios
+#Riesgo Alto, Medio, Bajo 
 
-def asigna_clima(data):
-  comuna=top5["Comuna"]
-  incendios=top5["NUMERO INCENDIOS "]
+def asigna_clima(agrupado):
+  comuna=agrupado["COMUNA"]
+  incendios=agrupado["NUMERO INCENDIOS "]
 
-  if(incendios < -33.49):
-    return top5[5]
-  elif(comuna=="RENCA" and incendios > 500):
-    return top5[0]
-  elif(comuna=="RENCA"):
-    return top5[1]
-  elif(comuna=="PROVIDENCIA"):
-    return top5[2]
+  if(incendios < 500):
+    return "Bajo"
+  elif(comuna=="COLLIPULLI" and incendios > 500):
+    return "Alto"
+  elif(comuna=="CURANILAHUE"):
+    return "Alto"
+  elif(comuna=="LEBU"):
+    return "Alto"
   elif(comuna=="HUECHURABA"):
-    return top5[3]
+    return "Alto"
   else:
-    return top5[4]
+    return "Alto"
+
+
+  # Limpiar los datos, Eliminando los registros sin Comuna
+agrupado.dropna(subset=["COMUNA"], inplace=True)
+
+
+  # Asignar valores de horarios a la columna de Horario,
+  # para esto se aplica una lógica usando todas las columnas de cada registro
+agrupado["Clima"] = agrupado.apply(asigna_clima, axis=1)
 
 #- El DataFrame resultante, debe ser almacenado en una base de datos local
 
+print(agrupado)
 
 #- Obtener los registros de la base de datos y exportar a un nuevo archivo Excel y otro archivo CSV.
 
