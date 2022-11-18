@@ -2,11 +2,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import datetime
-from sklearn.cluster import KMeans
-from sklearn import datasets
-from sklearn.utils import shuffle
-
-
 
 #- Usar un archivo Excel como fuente de datos iniciales, con al menos 1000 registros. Puede ser un archivo propio o bien obtenido de alguna fuente pública, de cualquier forma, debe quedar disponible en el repositorio de entrega.
 def carga_inicial():
@@ -44,7 +39,7 @@ agrupado = odc_renombrado.groupby(['COMUNA']).agg(
 #top5 = agrupado ['COMUNA']
 top5 = [agrupado[0:5]]
 
-print(top5)
+print(top5[1])
 
 #Aplicar a la columna clima Segun el clima de la comuna y la cantidad de incendios
 #Riesgo Alto, Medio, Bajo
