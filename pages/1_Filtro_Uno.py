@@ -6,11 +6,19 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Se importan funcionalidades desde librería propia
-from utils import data_incendio
+#from utils import data_incendio
 
+st.set_page_config(
+  page_icon=":thumbs_up:",
+  layout="wide",
+  
+)
+
+@st.cache
+def data_incendio():
+  return pd.read_excel("ODC2022.xlsx")  
 # Obtener datos desde cache
 data_puntos = data_incendio()
-print(data_puntos)
 # Generar listado de regin ordenados
 region_puntos = data_puntos["REGION"].sort_values().unique()
 
@@ -20,6 +28,10 @@ provincia_puntos = data_puntos["PROVINCIA"].sort_values().unique()
 # Generar listado de COMUNA ordenadas
 comuna_puntos = data_puntos["COMUNA"].sort_values().unique()
 
+
+datoscomuna = data_puntos[['COMUNA', 'NUMERO INCENDIOS ']]
+datoscomuna.dropna(subset=["NUMERO INCENDIOS "], inplace=True)
+print(datoscomuna)
 
 with st.sidebar:
   st.write("##### Filtros de Información")
@@ -62,37 +74,15 @@ def formato_porciento(dato: float):
 
 with col_bar:
   bar = plt.figure()
-  data_puntos.plot.bar(
-    title="Cantidad de incendios por region",
+  datoscomuna.plot.bar(
+    title="Cantidad de Puntos de Carga por Comuna",
     label="Total de Puntos",
-    xlabel="REGION",
-    ylabel="NUMERO INCENDIOS ",
+    xlabel="Comunas",
+    ylabel="Puntos de Carga",
     color="lightblue",
     grid=True,
   ).plot()
   st.pyplot(bar)
-
-with col_pie:
-  pie = plt.figure()
-  data_puntos.plot.pie(
-    y="index",
-    title="Cantidad de Puntos de Carga por Horario",
-    legend=None,
-    autopct=formato_porciento
-  ).plot()
-  st.pyplot(pie)
-
-with col_line:
-  line = plt.figure()
-  data_puntos.plot.line(
-    title="Cantidad de Puntos de incendios por Provincia",
-    label="Total de Puntos",
-    xlabel="PROVINCIA",
-    ylabel="NUMERO INCENDIOS ",
-    color="lightblue",
-    grid=True
-  ).plot()
-  st.pyplot(line)
 
 # Aplicar Filtros
 incendios_data = data_puntos.query(" REGION==@region_sel and PROVINCIA==@provincia_sel and COMUNA==@comuna_sel")
