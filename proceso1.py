@@ -116,23 +116,10 @@ agrupado.to_sql(con=engine, name="cargasincendios", if_exists="replace", index_l
 session = Session(engine)
 
 #- Obtener los registros de la base de datos y exportar a un nuevo archivo Excel y otro archivo CSV.
-#sql_comuna = select(CargasIncendios).where(CargasIncendios.COMUNA)
-#sql_comuna = sql_comuna.order_by(CargasIncendios.COMUNA)
-# Obtener todos los registros de la consulta
+
 conn = sqlite3.connect('incendios.db')
 df = pd.read_sql_query("select * from cargasincendios", conn)
 
 df.to_csv('incendiosCSV.csv', encoding='utf-8')
-df.to_excel('incendiosCSV.xlsx', encoding='utf-8', index=False)
+df.to_excel('incendiosXLSX.xlsx', encoding='utf-8', index=False)
 print(df)
-
-######################################################
-### Generar CSV con Puntos de Carga para 3 comunas ###
-# Filtrar datos de 3 comunas
-
-# Corregir el nombre de la columna de dirección, en este caso no se usa "inplace" ya que lo hacemos en memoria
-# y luego escribir el archivo CSV
-
-#sql_comuna.append(sql_comuna)
-
-#pd.concat(sql_comuna).to_csv("puntos-comunas.csv", encoding="UTF-8")
