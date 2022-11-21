@@ -93,11 +93,11 @@ class CargasIncendios(Base):
 
   # Definir cada atributo de la tabla y su tipo de dato
   COMUNA = Column(String(100), primary_key=True)
-  NUMERO_INCENDIOS = Column(Float)
+  NUMERO_INCENDIOS  = Column(Float)
   Clima = Column(String(100))
 
   def __repr__(self) -> str:
-    return f" CargasIncendios(COMUNA={self.COMUNA}, NUMERO_INCENDIOS={self.NUMERO_INCENDIOS}, Clima={self.Clima}, " \
+    return f" CargasIncendios(COMUNA={self.COMUNA}, NUMERO_INCENDIOS ={self.NUMERO_INCENDIOS }, Clima={self.Clima}, " \
       + ")"
 
 # Crear la tabla en BD
@@ -105,7 +105,7 @@ Base.metadata.create_all(engine)
 
 # Corregir nombres de columnas
 agrupado.rename(columns={
-  "NUMERO INCENDIOS": "NUMERO_INCENDIOS",
+  "NUMERO INCENDIOS ": "NUMERO_INCENDIOS ",
 }, inplace=True)
 # Grabar DataFrame en BD
 agrupado.to_sql(con=engine, name="cargasincendios", if_exists="replace", index_label="iE")
@@ -117,6 +117,6 @@ session = Session(engine)
 sql_comuna = select(CargasIncendios).where(CargasIncendios.COMUNA)
 sql_comuna = sql_comuna.order_by(CargasIncendios.COMUNA)
 # Obtener todos los registros de la consulta
-print(sql_comuna)
-#registros_comuna = session.scalars(sql_comuna).all()
 
+#registros_comuna = session.scalars(sql_comuna).all()
+print(sql_comuna)
