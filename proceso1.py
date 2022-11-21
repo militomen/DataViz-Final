@@ -120,6 +120,8 @@ session = Session(engine)
 conn = sqlite3.connect('incendios.db')
 df = pd.read_sql_query("select * from cargasincendios", conn)
 
+#CSV
 df.to_csv('incendiosCSV.csv', encoding='utf-8')
+#XLSX
 df.to_excel('incendiosXLSX.xlsx', encoding='utf-8', index=False)
-print(df)
+#print(df)
