@@ -2,60 +2,84 @@ import streamlit as st
 
 import pydeck as pdk
 import numpy as np
+import pandas as pd
+
 
 # Se importan funcionalidades desde librería propia
-from funciones import data_incendio
+from utils import data_incendio
+"""
+def data_incendio():
+  # Se lee Excel de datos
+  incendios=pd.read_excel("ODC2022.xlsx")
+
+  # Obtener columnas de datos
+  #data_comuna = incendios[ ["REGION","PROVINCIA", "COMUNA", "NUMERO INCENDIOS ", "TOTAL  FORESTAL ", "TOTAL OTRAS SUPERFICIES", "TOTAL SUPERFICIE AFECTADA", "AÑO", "LATITUD", "LONGITUD"]]
+
+  # Limpiar los datos, Eliminando los registros sin Comuna
+  #data_comuna.dropna(subset=["COMUNA"], inplace=True)
+
+  return incendios"""
 
 # Obtener datos desde cache
 data_puntos = data_incendio()
-
+print(data_puntos)
 # Generar listado de regin ordenados
-horarios_puntos = data_puntos["REGION"].sort_values().unique()
+region_puntos = data_puntos["REGION"].sort_values().unique()
 
 # Generar listado de provincia ordenadas
-comunas_puntos = data_puntos["PROVINCIA"].sort_values().unique()
+provincia_puntos = data_puntos["PROVINCIA"].sort_values().unique()
 
 # Generar listado de COMUNA ordenadas
-comunas_puntos = data_puntos["COMUNA"].sort_values().unique()
+comuna_puntos = data_puntos["COMUNA"].sort_values().unique()
 
 
 with st.sidebar:
   st.write("##### Filtros de Información")
   st.write("---")
 
-  # Multiselector de comunas
-  comuna_sel = st.multiselect(
-    label="Comunas en Funcionamiento",
-    options=comunas_puntos,
+  # Multiselector de REGION
+  region_sel = st.multiselect(
+    label="Regiones",
+    options=region_puntos,
     default=[]
   )
   # Se establece la lista completa en caso de no seleccionar ninguna
-  if not comuna_sel:
-    comuna_sel = comunas_puntos.tolist()
+  if not region_sel:
+    region_sel = region_puntos.tolist()
 
-  # Multiselector de horarios
-  hora_sel = st.multiselect(
-    label="Horario de Funcionamiento",
-    options=horarios_puntos,
-    default=horarios_puntos
+  # Multiselector de PROVINCIA
+  provincia_sel = st.multiselect(
+    label="Provincia",
+    options=provincia_puntos,
+    default=provincia_puntos
   )
   # Se establece la lista completa en caso de no seleccionar ninguna
-  if not hora_sel:
-    hora_sel = horarios_puntos.tolist()
+  if not provincia_sel:
+    hora_sel = provincia_puntos.tolist()
+
+# Multiselector de COMUNA
+  comuna_sel = st.multiselect(
+    label="Comuna",
+    options=comuna_puntos,
+    default=comuna_puntos
+  )
+  # Se establece la lista completa en caso de no seleccionar ninguna
+  if not comuna_sel:
+    comuna_sel = comuna_puntos.tolist()
 
 
 
 # Aplicar Filtros
-geo_data = data_puntos.query(" Horario==@hora_sel and Comuna==@comuna_sel")
+incendios_data = data_puntos.query(" REGION==@region_sel and PROVINCIA==@provincia_sel and COMUNA==@comuna_sel")
 
-if geo_data.empty:
+if incendios_data.empty:
   # Advertir al usuario que no hay datos para los filtros
   st.warning("#### No hay registros para los filtros usados!!!")
 else:
   # Desplegar Mapa
   # Obtener el punto promedio entre todas las georeferencias
-  avg_lat = np.median(geo_data["LATITUD"])
-  avg_lng = np.median(geo_data["LONGITUD"])
+  avg_lat = np.median(incendios_data["LATITUD"])
+  avg_lng = np.median(incendios_data["LONGITUD"])
 
   puntos_mapa = pdk.Deck(
       map_style=None,
@@ -70,7 +94,7 @@ else:
       layers=[
         pdk.Layer(
           "ScatterplotLayer",
-          data=geo_data,
+          data=incendios_data,
           pickable=True,
           auto_highlight=True,
           get_position='[LONGITUD, LATITUD]',
@@ -78,21 +102,9 @@ else:
           opacity=0.6,
           radius_scale=10,
           radius_min_pixels=3,
-          get_fill_color=["Horario == '08:30 - 18:30' ? 255 : 10", "Horario == '08:30 - 18:30' ? 0 : 200", 90, 200]
+          #get_fill_color=["Horario == '08:30 - 18:30' ? 255 : 10", "Horario == '08:30 - 18:30' ? 0 : 200", 90, 200]
         )      
-      ],
-      tooltip={
-        "html": "<b>Negocio: </b> {Negocio} <br /> "
-                "<b>Dirección: </b> {Dirección} <br /> "
-                "<b>Comuna: </b> {Comuna} <br /> "
-                "<b>Horario: </b> {Horario} <br /> "
-                "<b>Código: </b> {CODIGO} <br /> "
-                "<b>Georeferencia (Lat, Lng): </b>[{LATITUD}, {LONGITUD}] <br /> ",
-        "style": {
-          "backgroundColor": "steelblue",
-          "color": "white"
-        }
-      }
+      ]
   )
 
   st.write(puntos_mapa)
