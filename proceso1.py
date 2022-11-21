@@ -93,11 +93,11 @@ class CargasIncendios(Base):
 
   # Definir cada atributo de la tabla y su tipo de dato
   COMUNA = Column(String(100), primary_key=True)
-  NUMERO_INCENDIOS = Column(Integer)
-  CLIMA = Column(String(100))
+  NUMERO_INCENDIOS = Column(Float)
+  Clima = Column(String(100))
 
   def __repr__(self) -> str:
-    return f" CargasIncendios(COMUNA={self.COMUNA}, NUMERO_INCENDIOS={self.NUMERO_INCENDIOS}, CLIMA={self.CLIMA}, " \
+    return f" CargasIncendios(COMUNA={self.COMUNA}, NUMERO_INCENDIOS={self.NUMERO_INCENDIOS}, Clima={self.Clima}, " \
       + ")"
 
 # Crear la tabla en BD
@@ -108,21 +108,15 @@ agrupado.rename(columns={
   "NUMERO INCENDIOS": "NUMERO_INCENDIOS",
 }, inplace=True)
 # Grabar DataFrame en BD
-agrupado.to_sql(con=engine, name="cargasincendios", if_exists="replace", index_label="COMUNA")
+agrupado.to_sql(con=engine, name="cargasincendios", if_exists="replace", index_label="iE")
 
 # Crear sesión a BD
 session = Session(engine)
 
-# Consultar por registros de algunas comunas
-"""sql_comuna = select(CargasIncendios).where(CargasIncendios.COMUNA.in_(["RENCA", "ÑUÑOA"]) )
-registros_comuna = session.scalars(sql_comuna).all()
-for punto_carga in registros_comuna:
-  print(punto_carga)
-"""
-
-def formato_porciento(dato: float):
-  return f"{round(dato, ndigits=2)}%"
-
 #- Obtener los registros de la base de datos y exportar a un nuevo archivo Excel y otro archivo CSV.
-
+sql_comuna = select(CargasIncendios).where(CargasIncendios.COMUNA)
+sql_comuna = sql_comuna.order_by(CargasIncendios.COMUNA)
+# Obtener todos los registros de la consulta
+print(sql_comuna)
+#registros_comuna = session.scalars(sql_comuna).all()
 
