@@ -1,0 +1,348 @@
+,iE,COMUNA,NUMERO_INCENDIOS ,Clima
+0,57,COLLIPULLI,1149.0,Riesgo Alto
+1,74,CURANILAHUE,1140.0,Riesgo Alto
+2,136,LEBU,1015.0,Riesgo Alto
+3,150,LOS ALAMOS,969.0,Riesgo Probable
+4,324,TOME,862.0,Riesgo Probable
+5,152,LOS ANGELES,716.0,Riesgo Probable
+6,26,CANETE,696.0,Riesgo Medio
+7,177,MULCHEN,612.0,Riesgo Medio
+8,97,GALVARINO,588.0,Riesgo Medio
+9,158,LUMACO,561.0,Riesgo Medio
+10,321,TIRUA,438.0,Riesgo Considerable
+11,334,VICTORIA,405.0,Riesgo Considerable
+12,7,ANGOL,379.0,Riesgo Considerable
+13,10,ARAUCO,354.0,Riesgo Considerable
+14,88,ERCILLA,351.0,Riesgo Considerable
+15,234,PUERTO MONTT,325.0,Riesgo Considerable
+16,290,SAN JAVIER,313.0,Riesgo Considerable
+17,172,MELIPILLA,301.0,Riesgo Considerable
+18,312,TALCA,289.0,Riesgoso
+19,332,VALPARAISO,278.0,Riesgoso
+20,315,TEMUCO,275.0,Riesgoso
+21,106,HUALQUI,260.0,Riesgoso
+22,27,CARAHUE,257.0,Riesgoso
+23,67,CORONEL,251.0,Riesgoso
+24,327,TRAIGUEN,244.0,Riesgoso
+25,44,CHOL CHOL,238.0,Riesgoso
+26,212,PENCO,237.0,Riesgoso
+27,41,CHILLAN,235.0,Riesgoso
+28,283,SAN CLEMENTE,234.0,Riesgoso
+29,178,NACIMIENTO,230.0,Riesgoso
+30,32,CAUQUENES,229.0,Riesgoso
+31,157,LOTA,229.0,Riesgoso
+32,139,LINARES,227.0,Riesgoso
+33,168,MAULE,224.0,Riesgoso
+34,77,CURICO,224.0,Riesgoso
+35,16,CABRERO,217.0,Riesgoso
+36,52,COIHUECO,216.0,Riesgoso
+37,194,PADRE LAS CASAS,212.0,Riesgoso
+38,155,LOS SAUCES,204.0,Riesgoso
+39,90,FLORIDA,203.0,Riesgoso
+40,343,YUMBEL,203.0,Riesgoso
+41,63,CONSTITUCION,199.0,Riesgoso
+42,299,SAN PEDRO DE LA PAZ,199.0,Riesgoso
+43,252,QUILLON,192.0,Riesgoso
+44,0,ALGARROBO,186.0,Riesgoso
+45,297,SAN PEDRO,185.0,Riesgoso
+46,64,CONTULMO,185.0,Riesgoso
+47,186,NUEVA IMPERIAL,182.0,Riesgoso
+48,51,COELEMU,180.0,Riesgoso
+49,130,LAJA,174.0,Riesgoso
+50,114,ISLA DE PASCUA,161.0,Riesgoso
+51,340,VINA DEL MAR,155.0,Riesgoso
+52,135,LAUTARO,152.0,Riesgoso
+53,182,NEGRETE,152.0,Riesgoso
+54,148,LONGAVI,149.0,Riesgoso
+55,282,SAN CARLOS,146.0,Riesgoso
+56,204,PARRAL,143.0,Riesgoso
+57,76,CUREPTO,142.0,Riesgoso
+58,306,SANTA JUANA,142.0,Riesgoso
+59,253,QUILLOTA,140.0,Riesgoso
+60,131,LAMPA,140.0,Riesgoso
+61,251,QUILLECO,133.0,Riesgoso
+62,242,PUREN,132.0,Riesgoso
+63,72,CURACAVI,128.0,Riesgoso
+64,278,SAGRADA FAMILIA,127.0,Riesgoso
+65,42,CHILLAN VIEJO,122.0,Riesgoso
+66,60,CONCEPCION,120.0,Riesgoso
+67,192,OVALLE,117.0,Riesgoso
+68,211,PENCAHUE,117.0,Riesgoso
+69,268,RETIRO,115.0,Riesgoso
+70,174,MOLINA,113.0,Riesgoso
+71,313,TALCAHUANO,110.0,Riesgoso
+72,185,NOGALES,110.0,Riesgoso
+73,302,SAN ROSENDO,108.0,Riesgoso
+74,126,LA UNIÓN,106.0,Riesgoso
+75,261,RANQUIL,105.0,Riesgoso
+76,270,RIO CLARO,104.0,Riesgoso
+77,344,YUNGAY,98.0,Riesgo muy bajo
+78,14,BULNES,97.0,Riesgo muy bajo
+79,303,SAN VICENTE TAGUA TAGUA,96.0,Riesgo muy bajo
+80,329,TUCAPEL,95.0,Riesgo muy bajo
+81,58,COLTAUCO,95.0,Riesgo muy bajo
+82,295,SAN NICOLAS,90.0,Riesgo muy bajo
+83,203,PAREDONES,89.0,Riesgo muy bajo
+84,28,CARTAGENA,89.0,Riesgo muy bajo
+85,208,PEMUCO,87.0,Riesgo muy bajo
+86,104,HUALANE,87.0,Riesgo muy bajo
+87,197,PAINE,86.0,Riesgo muy bajo
+88,30,CASTRO,86.0,Riesgo muy bajo
+89,266,RENGO,84.0,Riesgo muy bajo
+90,254,QUILPUE,84.0,Riesgo muy bajo
+91,167,MARIQUINA,83.0,Riesgo muy bajo
+92,316,TENO,83.0,Riesgo muy bajo
+93,69,COYHAIQUE,83.0,Riesgo muy bajo
+94,29,CASABLANCA,83.0,Riesgo muy bajo
+95,280,SAN ANTONIO,82.0,Riesgo muy bajo
+96,20,CALERA,81.0,Riesgo muy bajo
+97,287,SAN FERNANDO,80.0,Riesgo muy bajo
+98,78,DALCAHUE,78.0,Riesgo muy bajo
+99,140,LITUECHE,77.0,Riesgo muy bajo
+100,223,PITRUFQUEN,77.0,Riesgo muy bajo
+101,133,LAS CABRAS,76.0,Riesgo muy bajo
+102,138,LIMACHE,75.0,Riesgo muy bajo
+103,91,FREIRE,74.0,Riesgo muy bajo
+104,342,YERBAS BUENAS,74.0,Riesgo muy bajo
+105,333,VICHUQUEN,73.0,Riesgo muy bajo
+106,166,MARIA PINTO,73.0,Riesgo muy bajo
+107,339,VILLARRICA,70.0,Riesgo muy bajo
+108,82,EL CARMEN,69.0,Riesgo muy bajo
+109,264,RENAICO,68.0,Riesgo muy bajo
+110,300,SAN RAFAEL,66.0,Riesgo muy bajo
+111,190,OLMUE,66.0,Riesgo muy bajo
+112,2,ALTO BIO BIO,65.0,Riesgo muy bajo
+113,219,PICHIDEGUA,64.0,Riesgo muy bajo
+114,196,PAILLACO,63.0,Riesgo muy bajo
+115,309,SANTO DOMINGO,63.0,Riesgo muy bajo
+116,122,LA LIGUA,63.0,Riesgo muy bajo
+117,84,EL QUISCO,62.0,Riesgo muy bajo
+118,289,SAN IGNACIO,62.0,Riesgo muy bajo
+119,259,QUIRIHUE,62.0,Riesgo muy bajo
+120,330,VALDIVIA,61.0,Riesgo muy bajo
+121,275,ROMERAL,60.0,Riesgo muy bajo
+122,102,HIJUELAS,58.0,Riesgo muy bajo
+123,336,VILCUN,58.0,Riesgo muy bajo
+124,36,CHANCO,58.0,Riesgo muy bajo
+125,56,COLINA,57.0,Riesgo muy bajo
+126,83,EL MONTE,57.0,Riesgo muy bajo
+127,304,SANTA BARBARA,56.0,Riesgo muy bajo
+128,311,TALAGANTE,56.0,Riesgo muy bajo
+129,201,PANQUEHUE,56.0,Riesgo muy bajo
+130,331,VALLENAR,55.0,Riesgo muy bajo
+131,230,PUCHUNCAVI,54.0,Riesgo muy bajo
+132,153,LOS LAGOS,54.0,Riesgo muy bajo
+133,249,QUILACO,54.0,Riesgo muy bajo
+134,62,CONCON,54.0,Riesgo muy bajo
+135,184,NIQUEN,53.0,Riesgo muy bajo
+136,258,QUINTERO,52.0,Riesgo muy bajo
+137,99,GORBEA,50.0,Riesgo muy bajo
+138,262,RAUCO,50.0,Riesgo muy bajo
+139,220,PICHILEMU,50.0,Riesgo muy bajo
+140,338,VILLA ALEMANA,49.0,Riesgo muy bajo
+141,286,SAN FELIPE,48.0,Riesgo muy bajo
+142,221,PINTO,47.0,Riesgo muy bajo
+143,159,MACHALI,46.0,Riesgo muy bajo
+144,285,SAN FABIAN,45.0,Riesgo muy bajo
+145,337,VILLA ALEGRE,44.0,Riesgo muy bajo
+146,237,PUERTO VARAS,44.0,Riesgo muy bajo
+147,13,BUIN,44.0,Riesgo muy bajo
+148,206,PELARCO,44.0,Riesgo muy bajo
+149,146,LOLOL,43.0,Riesgo muy bajo
+150,292,SAN JOSE DE MAIPO,41.0,Riesgo muy bajo
+151,183,NINHUE,41.0,Riesgo muy bajo
+152,125,LA SERENA,41.0,Riesgo muy bajo
+153,54,COLBUN,41.0,Riesgo muy bajo
+154,53,COINCO,40.0,Riesgo muy bajo
+155,147,LONCOCHE,40.0,Riesgo muy bajo
+156,225,PORTEZUELO,38.0,Riesgo muy bajo
+157,233,PUENTE ALTO,38.0,Riesgo muy bajo
+158,117,LA CRUZ,38.0,Riesgo muy bajo
+159,5,ANCUD,38.0,Riesgo muy bajo
+160,18,CALBUCO,38.0,Riesgo muy bajo
+161,214,PERQUENCO,38.0,Riesgo muy bajo
+162,191,OSORNO,37.0,Riesgo muy bajo
+163,222,PIRQUE,37.0,Riesgo muy bajo
+164,181,NAVIDAD,37.0,Riesgo muy bajo
+165,281,SAN BERNARDO,37.0,Riesgo muy bajo
+166,86,EMPEDRADO,37.0,Riesgo muy bajo
+167,45,CHONCHI,36.0,Riesgo muy bajo
+168,43,CHIMBARONGO,36.0,Riesgo muy bajo
+169,80,DONIHUE,36.0,Riesgo muy bajo
+170,207,PELLUHUE,35.0,Riesgo muy bajo
+171,232,PUDAHUEL,35.0,Riesgo muy bajo
+172,31,CATEMU,35.0,Riesgo muy bajo
+173,209,PENAFLOR,35.0,Riesgo muy bajo
+174,137,LICANTEN,34.0,Riesgo muy bajo
+175,163,MALLOA,33.0,Riesgo muy bajo
+176,93,FRESIA,33.0,Riesgo muy bajo
+177,161,MAFIL,33.0,Riesgo muy bajo
+178,66,COQUIMBO,33.0,Riesgo muy bajo
+179,293,SAN JUAN DE LA COSTA,33.0,Riesgo muy bajo
+180,164,MARCHIHUE,33.0,Riesgo muy bajo
+181,149,LONQUIMAY,33.0,Riesgo muy bajo
+182,305,SANTA CRUZ,32.0,Riesgo muy bajo
+183,1,ALHUE,31.0,Riesgo muy bajo
+184,200,PANGUIPULLI,31.0,Riesgo muy bajo
+185,238,PUMANQUE,31.0,Riesgo muy bajo
+186,113,ISLA DE MAIPO,30.0,Riesgo muy bajo
+187,202,PAPUDO,28.0,Riesgo muy bajo
+188,328,TREGUACO,28.0,Riesgo muy bajo
+189,118,LA ESTRELLA,27.0,Riesgo muy bajo
+190,47,COBQUECURA,27.0,Riesgo muy bajo
+191,39,CHIGUAYANTE,27.0,Riesgo muy bajo
+192,70,CUNCO,24.0,Riesgo muy bajo
+193,276,RÍO BUENO,24.0,Riesgo muy bajo
+194,267,REQUINOA,24.0,Riesgo muy bajo
+195,323,TOLTEN,23.0,Riesgo muy bajo
+196,193,PADRE HURTADO,23.0,Riesgo muy bajo
+197,105,HUALPEN,23.0,Riesgo muy bajo
+198,141,LLAILLAY,23.0,Riesgo muy bajo
+199,296,SAN PABLO,22.0,Riesgo muy bajo
+200,235,PUERTO NATALES,22.0,Riesgo muy bajo
+201,345,ZAPALLAR,21.0,Riesgo muy bajo
+202,319,TILTIL,20.0,Riesgo muy bajo
+203,213,PERALILLO,20.0,Riesgo muy bajo
+204,154,LOS MUERMOS,20.0,Riesgo muy bajo
+205,156,LOS VILOS,20.0,Riesgo muy bajo
+206,240,PUNTA ARENAS,20.0,Riesgo muy bajo
+207,279,SALAMANCA,19.0,Riesgo muy bajo
+208,255,QUINCHAO,19.0,Riesgo muy bajo
+209,260,RANCAGUA,19.0,Riesgo muy bajo
+210,11,ARICA,19.0,Riesgo muy bajo
+211,71,CURACAUTIN,19.0,Riesgo muy bajo
+212,171,MELIPEUCO,19.0,Riesgo muy bajo
+213,40,CHILE CHICO,19.0,Riesgo muy bajo
+214,176,MOSTAZAL,19.0,Riesgo muy bajo
+215,175,MONTE PATRIA,19.0,Riesgo muy bajo
+216,273,RIO NEGRO,18.0,Riesgo muy bajo
+217,151,LOS ANDES,18.0,Riesgo muy bajo
+218,231,PUCON,18.0,Riesgo muy bajo
+219,162,MAIPU,17.0,Riesgo muy bajo
+220,38,CHEPICA,17.0,Riesgo muy bajo
+221,68,CORRAL,17.0,Riesgo muy bajo
+222,335,VICUNA,17.0,Riesgo muy bajo
+223,277,SAAVEDRA,16.0,Riesgo muy bajo
+224,50,CODEGUA,16.0,Riesgo muy bajo
+225,17,CALAMA,16.0,Riesgo muy bajo
+226,115,JUAN FERNANDEZ,16.0,Riesgo muy bajo
+227,92,FREIRINA,15.0,Riesgo muy bajo
+228,9,ANTUCO,15.0,Riesgo muy bajo
+229,284,SAN ESTEBAN,15.0,Riesgo muy bajo
+230,341,VITACURA,14.0,Riesgo muy bajo
+231,246,QUEILEN,14.0,Riesgo muy bajo
+232,119,LA FLORIDA,14.0,Riesgo muy bajo
+233,272,RIO IBAÑEZ,14.0,Riesgo muy bajo
+234,143,LO BARNECHEA,14.0,Riesgo muy bajo
+235,216,PEUMO,14.0,Riesgo muy bajo
+236,317,TEODORO SCHMIDT,13.0,Riesgo muy bajo
+237,265,RENCA,13.0,Riesgo muy bajo
+238,107,HUARA,13.0,Riesgo muy bajo
+239,132,LANCO,13.0,Riesgo muy bajo
+240,198,PALENA,12.0,Riesgo muy bajo
+241,109,HUECHURABA,12.0,Riesgo muy bajo
+242,85,EL TABO,12.0,Riesgo muy bajo
+243,269,RINCONADA,12.0,Riesgo muy bajo
+244,256,QUINTA DE TILCOCO,11.0,Riesgo muy bajo
+245,247,QUELLON,11.0,Riesgo muy bajo
+246,179,NANCAGUA,11.0,Riesgo muy bajo
+247,244,PUTAENDO ,10.0,Riesgo muy bajo
+248,169,MAULLIN,10.0,Riesgo muy bajo
+249,210,PENALOLEN,10.0,Riesgo muy bajo
+250,245,PUTRE,9.0,Riesgo muy bajo
+251,250,QUILICURA,9.0,Riesgo muy bajo
+252,75,CURARREHUE,9.0,Riesgo muy bajo
+253,100,GRANEROS,9.0,Riesgo muy bajo
+254,49,COCHRANE,9.0,Riesgo muy bajo
+255,243,PURRANQUE,8.0,Riesgo muy bajo
+256,96,FUTRONO,8.0,Riesgo muy bajo
+257,22,CALLE LARGA,8.0,Riesgo muy bajo
+258,229,PROVIDENCIA,8.0,Riesgo muy bajo
+259,48,COCHAMO,7.0,Riesgo muy bajo
+260,3,ALTO DEL CARMEN,7.0,Riesgo muy bajo
+261,73,CURACO DE VELEZ,7.0,Riesgo muy bajo
+262,241,PUQUELDON,7.0,Riesgo muy bajo
+263,236,PUERTO OCTAY,7.0,Riesgo muy bajo
+264,127,LAGO RANCO,7.0,Riesgo muy bajo
+265,12,AYSEN,7.0,Riesgo muy bajo
+266,199,PALMILLA,7.0,Riesgo muy bajo
+267,110,ILLAPEL,7.0,Riesgo muy bajo
+268,25,CANELA,6.0,Riesgo muy bajo
+269,263,RECOLETA,6.0,Riesgo muy bajo
+270,21,CALERA DE TANGO,6.0,Riesgo muy bajo
+271,320,TIMAUKEL,5.0,Riesgo muy bajo
+272,65,COPIAPÓ,5.0,Riesgo muy bajo
+273,248,QUEMCHI,5.0,Riesgo muy bajo
+274,15,CABILDO,5.0,Riesgo muy bajo
+275,215,PETORCA,5.0,Riesgo muy bajo
+276,103,HUALAIHUE,5.0,Riesgo muy bajo
+277,123,LA PINTANA,5.0,Riesgo muy bajo
+278,23,CAMARONES,4.0,Riesgo muy bajo
+279,325,TORRES DEL PAINE,4.0,Riesgo muy bajo
+280,142,LLANQUIHUE,4.0,Riesgo muy bajo
+281,46,CISNES,4.0,Riesgo muy bajo
+282,134,LAS CONDES,4.0,Riesgo muy bajo
+283,128,LAGO VERDE,4.0,Riesgo muy bajo
+284,288,SAN GREGORIO,4.0,Riesgo muy bajo
+285,318,TIERRA AMARILLA,4.0,Riesgo muy bajo
+286,35,CHAITEN,4.0,Riesgo muy bajo
+287,226,PORVENIR,4.0,Riesgo muy bajo
+288,227,POZO ALMONTE,4.0,Riesgo muy bajo
+289,124,LA REINA,3.0,Riesgo muy bajo
+290,298,SAN PEDRO DE ATACAMA,3.0,Riesgo muy bajo
+291,224,PLACILLA,3.0,Riesgo muy bajo
+292,59,COMBARBALA,3.0,Riesgo muy bajo
+293,33,CERRILLOS,2.0,Riesgo muy bajo
+294,95,FUTALEUFU,2.0,Riesgo muy bajo
+295,271,RIO HURTADO,2.0,Riesgo muy bajo
+296,239,PUNITAQUI,2.0,Riesgo muy bajo
+297,195,PAIHUANO,2.0,Riesgo muy bajo
+298,94,FRUTILLAR,2.0,Riesgo muy bajo
+299,294,SAN MIGUEL,2.0,Riesgo muy bajo
+300,274,RIO VERDE,1.0,Riesgo muy bajo
+301,326,TORTEL,1.0,Riesgo muy bajo
+302,228,PRIMAVERA,1.0,Riesgo muy bajo
+303,120,LA GRANJA,1.0,Riesgo muy bajo
+304,188,OLIVAR,1.0,Riesgo muy bajo
+305,187,OHIGGINS,1.0,Riesgo muy bajo
+306,108,HUASCO,1.0,Riesgo muy bajo
+307,307,SANTA MARIA,1.0,Riesgo muy bajo
+308,308,SANTIAGO,1.0,Riesgo muy bajo
+309,180,NAVARINO,1.0,Riesgo muy bajo
+310,217,PEYUHUE,1.0,Riesgo muy bajo
+311,218,PICA,1.0,Riesgo muy bajo
+312,314,TALTAL,0.0,Riesgo muy bajo
+313,322,TOCOPILLA,0.0,Riesgo muy bajo
+314,173,MINCHA,0.0,Riesgo muy bajo
+315,310,SIERRA GORDA,0.0,Riesgo muy bajo
+316,301,SAN RAMON,0.0,Riesgo muy bajo
+317,4,ALTO HOSPICIO,0.0,Riesgo muy bajo
+318,6,ANDACOLLO,0.0,Riesgo muy bajo
+319,8,ANTOFAGASTA,0.0,Riesgo muy bajo
+320,19,CALDERA,0.0,Riesgo muy bajo
+321,24,CAMIÑA,0.0,Riesgo muy bajo
+322,34,CERRO NAVIA,0.0,Riesgo muy bajo
+323,37,CHAÑARAL,0.0,Riesgo muy bajo
+324,55,COLCHANE,0.0,Riesgo muy bajo
+325,61,CONCHALI,0.0,Riesgo muy bajo
+326,79,DIEGO DE ALMAGRO,0.0,Riesgo muy bajo
+327,81,EL BOSQUE,0.0,Riesgo muy bajo
+328,87,ENTRE LAGOS,0.0,Riesgo muy bajo
+329,89,ESTACION CENTRAL,0.0,Riesgo muy bajo
+330,98,GENERAL LAGOS,0.0,Riesgo muy bajo
+331,101,GUAYTECAS,0.0,Riesgo muy bajo
+332,111,INDEPENDENCIA,0.0,Riesgo muy bajo
+333,112,IQUIQUE,0.0,Riesgo muy bajo
+334,116,LA CISTERNA,0.0,Riesgo muy bajo
+335,121,LA HIGUERA,0.0,Riesgo muy bajo
+336,129,LAGUNA BLANCA,0.0,Riesgo muy bajo
+337,144,LO ESPEJO,0.0,Riesgo muy bajo
+338,145,LO PRADO,0.0,Riesgo muy bajo
+339,160,MACUL,0.0,Riesgo muy bajo
+340,165,MARIA ELENA,0.0,Riesgo muy bajo
+341,170,MEJILLONES,0.0,Riesgo muy bajo
+342,189,OLLAGUE,0.0,Riesgo muy bajo
+343,205,PEDRO AGUIRRE CERDA,0.0,Riesgo muy bajo
+344,257,QUINTA NORMAL,0.0,Riesgo muy bajo
+345,291,SAN JOAQUIN,0.0,Riesgo muy bajo
+346,346,ÑUÑOA,0.0,Riesgo muy bajo
