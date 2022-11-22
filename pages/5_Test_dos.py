@@ -81,23 +81,17 @@ group_max = group_comuna.apply(lambda x: x if x > 60 else None).dropna(axis=0)
 
 
 with col_sel:
-  comunas_agrupadas = st.multiselect(
-    label="Filtrar por grupos de Comuna", 
-    options=["Menos de 20 Puntos", "21 a 60 Puntos", "Más de 60 Puntos"],
-    help="Selecciona la agrupación a mostrar",
-    default=[]
-  )
+  pie = plt.figure()
+  top5.plot.line(
+    title="Cantidad de Puntos de Carga por Comuna",
+    label="Total de Puntos",
+    xlabel="Comunas",
+    ylabel="Puntos de Carga",
+    color="lightblue",
+    grid=True
+  ).plot()
+  st.pyplot(pie)
 
-filtrar = []
-
-if "Menos de 20 Puntos" in comunas_agrupadas:
-  filtrar = filtrar + group_20.index.tolist()
-
-if "21 a 60 Puntos" in comunas_agrupadas:
-  filtrar = filtrar + group_60.index.tolist()
-
-if "Más de 60 Puntos" in comunas_agrupadas:
-  filtrar = filtrar + group_max.index.tolist()
 
 # Obtener parte de la información
 
@@ -109,48 +103,16 @@ geo_data = bip
 
 print(geo_data)
 
-# Aplicar filtro de Comuna
-if filtrar:
-  geo_data = bip.query("COMUNA == @filtrar")
-
-# Obtener el punto promedio entre todas las georeferencias
-avg_lat = np.median(geo_data["LATITUD"])
-avg_lng = np.median(geo_data["LONGITUD"])
-
-puntos_mapa = pdk.Deck(
-    map_style=None,
-    initial_view_state=pdk.ViewState(
-        latitude=avg_lat,
-        longitude=avg_lng,
-        zoom=10,
-        min_zoom=10,
-        max_zoom=15,
-        pitch=20,
-    ),
-    layers=[
-      pdk.Layer(
-        "ScatterplotLayer",
-        data=geo_data,
-        pickable=True,
-        auto_highlight=True,
-        get_position='[LONGITUD, LATITUD]',
-        filled=True,
-        opacity=1,
-        radius_scale=10,
-        radius_min_pixels=2,
-        # radius_max_pixels=10,
-        # line_width_min_pixels=0.01,
-      )      
-    ],
-    tooltip={
-      "html": "<b>Negocio: </b> {Negocio} <br /> "
-              "<b>Dirección: </b> {Dirección} <br /> "
-              "<b>Comuna: </b> {Comuna} <br /> "
-              "<b>Código: </b> {CODIGO} <br /> "
-              "<b>Georeferencia (Lat, Lng): </b>[{LATITUD}, {LONGITUD}] <br /> "
-    }
-)
 
 with col_map:
-  st.write(puntos_mapa)
+  bar = plt.figure()
+  top5.plot.bar(
+    title="Cantidad de Puntos de Carga por Comuna",
+    label="Total de Puntos",
+    xlabel="Comunas",
+    ylabel="Puntos de Carga",
+    color="lightblue",
+    grid=True,
+  ).plot()
+  st.pyplot(bar)
 

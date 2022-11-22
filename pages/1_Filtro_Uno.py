@@ -1,5 +1,4 @@
 import streamlit as st
-
 import pydeck as pdk
 import numpy as np
 import pandas as pd
@@ -30,8 +29,12 @@ comuna_puntos = data_puntos["COMUNA"].sort_values().unique()
 
 
 datoscomuna = data_puntos[['COMUNA', 'NUMERO INCENDIOS ']]
-datoscomuna.dropna(subset=["NUMERO INCENDIOS "], inplace=True)
-print(datoscomuna)
+datadue = datoscomuna.dropna(subset=["NUMERO INCENDIOS "])#, inplace=True)
+print(datadue)
+
+top5 = datadue[0:5]
+
+print(top5)
 
 with st.sidebar:
   st.write("##### Filtros de Información")
@@ -55,7 +58,7 @@ with st.sidebar:
   )
   # Se establece la lista completa en caso de no seleccionar ninguna
   if not provincia_sel:
-    hora_sel = provincia_puntos.tolist()
+    provincia_sel = provincia_puntos.tolist()
 
 # Multiselector de COMUNA
   comuna_sel = st.multiselect(
@@ -72,17 +75,7 @@ col_bar, col_pie, col_line = st.columns(3, gap="small")
 def formato_porciento(dato: float):
   return f"{round(dato, ndigits=2)}%"
 
-with col_bar:
-  bar = plt.figure()
-  datoscomuna.plot.bar(
-    title="Cantidad de Puntos de Carga por Comuna",
-    label="Total de Puntos",
-    xlabel="Comunas",
-    ylabel="Puntos de Carga",
-    color="lightblue",
-    grid=True,
-  ).plot()
-  st.pyplot(bar)
+
 
 # Aplicar Filtros
 incendios_data = data_puntos.query(" REGION==@region_sel and PROVINCIA==@provincia_sel and COMUNA==@comuna_sel")
@@ -96,3 +89,14 @@ else:
   #avg_lat = np.median(incendios_data["LATITUD"])
   #avg_lng = np.median(incendios_data["LONGITUD"])
   st.warning("#### se deberian mostrar registros!!!")
+  with col_bar:
+    bar = plt.figure()
+    top5.plot.bar(
+      title="Cantidad de Puntos de Carga por Comuna",
+      label="Total de Puntos",
+      xlabel="Comunas",
+      ylabel="Puntos de Carga",
+      color="lightblue",
+      grid=True,
+    ).plot()
+  st.pyplot(bar)

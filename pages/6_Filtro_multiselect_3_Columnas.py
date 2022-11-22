@@ -53,10 +53,16 @@ with st.sidebar:
   if not hora_sel:
     hora_sel = horarios_puntos.tolist()
 
+def formato_porciento(dato: float):
+  return f"{round(dato, ndigits=2)}%"
 
+col_bar, col_pie, col_table = st.columns(3, gap="large")
+
+# Se ordenan de mayor a menor, gracias al uso del parámetros "ascending=False"
 
 # Aplicar Filtros
 geo_data = data_puntos.query(" REGION==@hora_sel and COMUNA==@comuna_sel")
+
 
 if geo_data.empty:
   # Advertir al usuario que no hay datos para los filtros
@@ -66,6 +72,8 @@ else:
   # Obtener el punto promedio entre todas las georeferencias
   avg_lat = np.median(geo_data["LATITUD"])
   avg_lng = np.median(geo_data["LONGITUD"])
+  group_comuna = geo_data.groupby(["COMUNA"]).size()
+  group_comuna.sort_values(axis="index", ascending=False, inplace=True)
 
   puntos_mapa = pdk.Deck(
       map_style=None,
@@ -105,5 +113,38 @@ else:
       }
   )
 
-  st.write(puntos_mapa)
+  #st.write(puntos_mapa)
 
+  with col_bar:
+    bar = plt.figure()
+    group_comuna.plot.bar(
+      title="Cantidad de Puntos de Carga por Comuna",
+      label="Total de Puntos",
+      xlabel="Comunas",
+      ylabel="Puntos de Carga",
+      color="lightblue",
+      grid=True,
+    ).plot()
+    st.pyplot(bar)
+
+  with col_pie:
+    pie = plt.figure()
+    group_comuna.plot.pie(
+      y="index",
+      title="Cantidad de Puntos de Carga por Comuna",
+      legend=None,
+      autopct=formato_porciento
+    ).plot()
+    st.pyplot(pie)
+
+  with col_table:
+    pie = plt.figure()
+    group_comuna.plot.line(
+      title="Cantidad de Puntos de Carga por Comuna",
+      label="Total de Puntos",
+      xlabel="Comunas",
+      ylabel="Puntos de Carga",
+      color="lightblue",
+      grid=True
+    ).plot()
+    st.pyplot(pie)
