@@ -35,7 +35,7 @@ with st.sidebar:
 
   # Multiselector de comunas
   comuna_sel = st.multiselect(
-    label="Comunas en Funcionamiento",
+    label="Comuna",
     options=comunas_puntos,
     default=[]
   )
@@ -44,19 +44,19 @@ with st.sidebar:
     comuna_sel = comunas_puntos.tolist()
 
   # Multiselector de horarios
-  hora_sel = st.multiselect(
-    label="Horario de Funcionamiento",
+  region_sel = st.multiselect(
+    label="Region",
     options=horarios_puntos,
     default=horarios_puntos
   )
   # Se establece la lista completa en caso de no seleccionar ninguna
-  if not hora_sel:
-    hora_sel = horarios_puntos.tolist()
+  if not region_sel:
+    region_sel = horarios_puntos.tolist()
 
 
 
 # Aplicar Filtros
-geo_data = data_puntos.query(" REGION==@hora_sel and COMUNA==@comuna_sel")
+geo_data = data_puntos.query(" REGION==@region_sel and COMUNA==@comuna_sel")
 
 if geo_data.empty:
   # Advertir al usuario que no hay datos para los filtros
