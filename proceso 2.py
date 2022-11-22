@@ -1,9 +1,9 @@
 """2. Crear una aplicación Streamlit de múltiples páginas, que implemente lo siguiente:
 
 - Crear una página inicial (Home) que describa a que se refiere la aplicación.
-	1 Punto
+	1 Punto LISTO
 - Crear una página Acerca de, que contenga la información de quien creó la aplicación, nombre, email y algún dato adicional como link a su página web o sitio web preferido.
-	1 Punto
+	1 Punto LISTO
 - Crear una página que presente al menos 2 filtros de tipo multiselect en el Sidebar
 	2 Puntos
 - Los filtros deben reflejar el resultado en gráficos en el área central de la página, desplegar gráficos de: barra, línea y torta, estos distribuidos en 3 columnas.
