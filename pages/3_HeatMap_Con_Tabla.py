@@ -79,24 +79,19 @@ else:
       ),
       layers=[
         pdk.Layer(
-          "ScatterplotLayer",
+          "HeatmapLayer",
           data=geo_data,
           pickable=True,
           auto_highlight=True,
           get_position='[LONGITUD, LATITUD]',
-          filled=True,
           opacity=0.6,
-          radius_scale=10,
-          radius_min_pixels=3,
-          get_fill_color=["Horario == '08:30 - 18:30' ? 255 : 10", "Horario == '08:30 - 18:30' ? 0 : 200", 90, 200]
-        )      
+          get_weight="Horario == '10:00 - 14:00' ? 255 : 10"
+        )       
       ],
       tooltip={
-        "html": "<b>Negocio: </b> {Negocio} <br /> "
-                "<b>Dirección: </b> {Dirección} <br /> "
-                "<b>Comuna: </b> {Comuna} <br /> "
-                "<b>Horario: </b> {Horario} <br /> "
-                "<b>Código: </b> {CODIGO} <br /> "
+        "html": "<b>Region: </b> {REGION} <br /> "
+                "<b>Provincia: </b> {PROVINCIA} <br /> "
+                "<b>Comuna: </b> {COMUNA} <br /> "
                 "<b>Georeferencia (Lat, Lng): </b>[{LATITUD}, {LONGITUD}] <br /> ",
         "style": {
           "backgroundColor": "steelblue",
@@ -106,4 +101,4 @@ else:
   )
 
   st.write(puntos_mapa)
-
+  st.write(geo_data)
