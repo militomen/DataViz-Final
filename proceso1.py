@@ -7,6 +7,7 @@ from sqlalchemy import Column, Float, Integer, String, create_engine, select
 from sqlalchemy.orm import declarative_base, Session
 import sqlite3
 import csv
+import requests, json
 
 #- Usar un archivo Excel como fuente de datos iniciales, con al menos 1000 registros. Puede ser un archivo propio o bien obtenido de alguna fuente pública, de cualquier forma, debe quedar disponible en el repositorio de entrega.
 def carga_inicial():
@@ -31,6 +32,19 @@ odc_renombrado['Fecha de Proceso'] = fecha_actual.strftime("%d-%m-%Y")
 #  al menos 5 comunas. Tip: se debe hacer la consulta de las 5 comunas antes de aplicar
 #  el dato a la columna de Clima, similar al ejemplo de horarios en la clase final.
 odc_renombrado['Clima'] = ("")
+
+api_key = "a5199b175531f72559a9c1354f616168"
+ 
+base_url = "http://api.openweathermap.org/data/2.5/weather?"
+ 
+city_name = "Santiago"
+
+complete_url = base_url + "appid=" + api_key + "&q=" + city_name
+ 
+response = requests.get(complete_url)
+
+x = response.json()
+print(x)
 #Obtener lista de comunas resumidas
 comunas = odc_renombrado["COMUNA"].sort_values().unique()
 
